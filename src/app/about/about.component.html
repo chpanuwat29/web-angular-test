@@ -1,0 +1,42 @@
+<section class="container">
+
+  <div class="row">
+    <div class="col-lg-12">
+      <h3 [ngStyle]="{ color: 'blue', backgroundColor: myColor }"> {{ title }}</h3>
+      <table class="table table-bordered">
+        <tr>
+          <th>ลำดับ</th>
+          <th>ชื่อคอร์ส</th>
+          <th>ราคา</th>
+        </tr>
+        <tr *ngFor="let c of courses; let i = index">
+          <td> {{ i+1 }}</td>
+          <td> {{ c.name}}</td>
+          <td> {{ c.price}}</td>
+        </tr>
+      </table>
+
+      <ul>
+        <li *ngFor="let u of users">
+          {{ u }}
+        </li>
+      </ul>
+      <p [ngClass]="{ title: isActice}">
+        อายุ {{ age }} ปี
+        email: {{ info.email }}
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur ab facilis nulla perspiciatis quibusdam illum possimus veniam porro magnam nostrum error officia cupiditate corrupti sit nam, dicta dolore harum. Asperiores?
+      </p>
+
+      <img *ngIf="isShow" [src]="logo" [width]="imgWidth" >
+
+      <br>
+      <br>
+      <button type="button" class="btn btn-primary" (click)="go()">Click me!</button>
+    </div>
+
+  </div>
+
+
+</section>
